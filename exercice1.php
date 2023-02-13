@@ -11,8 +11,13 @@
 
 $tableau = [2, 6, 7, 6, 3, 2, 1, 4, 5, 2, 3, 6, 9, 7, 2];
 
-print_r($tableau);
+echo "<h3> Question 1 </h3>";
+foreach($tableau as $elem) {
+    echo $elem, "<br>";
+}
 
+
+echo "<h3> Question 2 </h3>";
 for($i = 0; $i < count($tableau); $i++) {
     for($j = $i; $j < count($tableau); $j++) {
         if ($tableau[$i] > $tableau[$j]) {
@@ -23,7 +28,28 @@ for($i = 0; $i < count($tableau); $i++) {
     }
 }
 
-print_r($tableau);
+foreach($tableau as $elem) {
+    echo $elem, "<br>";
+}
+
+
+echo "<h3> Question 3 </h3>";
+$tableau2 = [];
+array_push($tableau2, $tableau[0]);
+$i = 0;
+$j = 0;
+while ($i < count($tableau)) {
+    if ($tableau[$i] != $tableau2[$j]) {
+        $j++;
+        array_push($tableau2, $tableau[$i]);
+    }
+    $i++;
+}
+
+foreach($tableau2 as $elem) {
+    echo $elem, "<br>";
+}
+
 
 ?>
 </body>
